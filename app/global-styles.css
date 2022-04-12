@@ -1,0 +1,44 @@
+/* CSS reset by Josh Comeau */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+html {
+  --mobile-breakpoint: 550px;
+}
+
+.main-container {
+  width: clamp(600px, 65%, 1000px);
+  margin: 0 auto;
+  max-width: 100%;
+  padding-top: 60px;
+}
+
+@media (max-width: 550px) {
+  .main-container {
+    padding: 20px;
+  }
+}

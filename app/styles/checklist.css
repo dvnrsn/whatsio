@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+label {
+  cursor: pointer;
+}
+
+input {
+  margin-right: 8px;
+}

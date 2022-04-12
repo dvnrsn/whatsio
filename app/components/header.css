@@ -1,0 +1,36 @@
+.logo-wrapper {
+  margin-left: -20px;
+  margin-right: auto;
+}
+
+.logo {
+  height: 80px;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.navUl {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+@media (max-width: 550px) {
+  .logo-wrapper {
+    margin-left: revert;
+  }
+}
