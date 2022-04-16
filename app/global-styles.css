@@ -28,17 +28,49 @@ select {
 
 html {
   --mobile-breakpoint: 550px;
+  --primary-color: hsl(25, 67%, 47%);
 }
 
 .main-container {
   width: clamp(600px, 65%, 1000px);
   margin: 0 auto;
   max-width: 100%;
-  padding-top: 60px;
+  height: 100%;
+  /* to combat margin collapse */
+  padding: 0.05px;
+  /* this flex container allows content to fill the whole height and nothing more */
+  display: flex;
+  flex-direction: column;
 }
 
 @media (max-width: 550px) {
   .main-container {
     padding: 20px;
   }
+}
+
+/* button styles */
+
+.whatsio-button {
+  background: var(--primary-color);
+  padding: 8px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  transition: transform 400ms;
+}
+
+.whatsio-button ~ .whatsio-button {
+  margin-right: 20px;
+}
+
+.whatsio-button:hover, .whatsio-button:focus {
+  transform: scale(1.2) rotate(5deg);
+  transition: transform 100ms;
+}
+
+.whatsio-button:active {
+  transform: scale(1.2) rotate(5deg) translateX(5px);
+  transition: transform 100ms;
 }

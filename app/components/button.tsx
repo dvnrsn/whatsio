@@ -1,16 +1,10 @@
 import React from "react";
 import { Link } from "remix";
-import buttonStyles from "./button.css";
 
 type Props = {
-  asAnchor: boolean;
   href?: string;
   onClick?: Function;
   children: React.ReactNode;
-};
-
-export const links = () => {
-  return [{ rel: "stylesheet", href: buttonStyles }];
 };
 
 function assert(condition: any, msg?: string): asserts condition {
@@ -19,11 +13,11 @@ function assert(condition: any, msg?: string): asserts condition {
   }
 }
 
-export default function Button({ asAnchor, href, onClick, children }: Props) {
-  if (asAnchor) {
-    assert(typeof href === "string", "<Button> expected a string for `to`");
+export default function Button({ href, onClick, children }: Props) {
+  if (href) {
+    assert(typeof href === "string", "<Button> expected a string for `href`");
     return (
-      <Link className="button" to={href}>
+      <Link className="whatsio-button" to={href}>
         {children}
       </Link>
     );
@@ -33,7 +27,7 @@ export default function Button({ asAnchor, href, onClick, children }: Props) {
       "<Button> expected a function for `onclick`"
     );
     return (
-      <button className="button" onClick={(e) => onClick(e)}>
+      <button className="whatsio-button" onClick={(e) => onClick(e)}>
         {children}
       </button>
     );
