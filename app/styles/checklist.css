@@ -10,4 +10,5 @@ label {
 
 input {
   margin-right: 8px;
+  accent-color: var(--primary-color);
 }
