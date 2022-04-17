@@ -49,23 +49,36 @@ html {
   }
 }
 
+/* main-container is intended to wrap everything
+centered-content-container wraps content is often used for stuff beneath header */
+
+.centered-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40%;
+  gap: 20px
+}
+
 /* button styles */
 
 .whatsio-button {
   background: var(--primary-color);
   padding: 8px 20px;
   border-radius: 8px;
+  border: none;
   text-decoration: none;
   color: white;
   display: inline-block;
   transition: transform 400ms;
+  cursor: pointer;
 }
 
 .whatsio-button ~ .whatsio-button {
   margin-right: 20px;
 }
 
-.whatsio-button:hover, .whatsio-button:focus {
+.whatsio-button:hover {
   transform: scale(1.2) rotate(5deg);
   transition: transform 100ms;
 }
@@ -73,4 +86,8 @@ html {
 .whatsio-button:active {
   transform: scale(1.2) rotate(5deg) translateX(5px);
   transition: transform 100ms;
+}
+
+.whatsio-button:active:not(:focus-visible) {
+  outline: none;
 }
