@@ -1,6 +1,6 @@
 # What Should I Order?
 
-A project exploring a product for answering the ubiquitous question of what one should select off a menu, whether old or new.
+A project exploring a product for answering the ubiquitous question of what one should select off a menu.
 
 ## Development
 
