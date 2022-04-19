@@ -4,7 +4,7 @@ export default function () {
   return (
     <div className="centered-content-container">
       Which Dish?
-      <Input type="text" />
+      <Input autoFocus type="text" />
     </div>
   );
 }
