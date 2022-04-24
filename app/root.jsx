@@ -1,3 +1,4 @@
+import { json } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -5,6 +6,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from "@remix-run/react";
 import { Header, links as headerLinks } from "./components/header";
 import globalStyles from "./global-styles.css";
@@ -17,7 +19,16 @@ export const links = () => {
   return [...headerLinks(), { rel: "stylesheet", href: globalStyles }];
 };
 
+export const loader = async () => {
+  return json({
+    ENV: {
+      GOOGLE_MAPS_API_KEY: process.env.GOOGLE_MAPS_API_KEY,
+    },
+  });
+};
+
 export default function App() {
+  const data = useLoaderData();
   return (
     <html lang="en">
       <head>
@@ -42,6 +53,11 @@ export default function App() {
           <Outlet />
         </div>
         <ScrollRestoration />
+        <script
+          id="google-apis-script"
+          async
+          src={`https://maps.googleapis.com/maps/api/js?key=${data.ENV.GOOGLE_MAPS_API_KEY}&libraries=places`}
+        ></script>
         <Scripts />
         {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>
