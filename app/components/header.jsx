@@ -1,4 +1,4 @@
-import { NavLink, Link } from "remix";
+import { Link, NavLink } from "@remix-run/react";
 import styleUrl from "./header.css";
 
 export const links = () => {

@@ -1,4 +1,4 @@
-import { useLoaderData } from "remix";
+import { useLoaderData } from "@remix-run/react";
 import { getTodos } from "~/todos";
 import checklistStyle from "../styles/checklist.css";
 

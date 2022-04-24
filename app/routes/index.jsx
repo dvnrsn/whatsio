@@ -1,4 +1,4 @@
-import { Link } from "remix";
+import { Link } from "@remix-run/react";
 import Button from "../components/button";
 import indexStyles from "~/styles/index.css";
 
