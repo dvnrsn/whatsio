@@ -10,6 +10,8 @@
       "target": "ES2019",
       "strict": true,
       "baseUrl": ".",
+      // TODO: remove and upgrade google maps hook
+      "allowJs": true,
       "paths": {
         "~/*": ["./app/*"]
       },
