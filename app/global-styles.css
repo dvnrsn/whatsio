@@ -79,10 +79,6 @@ centered-content-container wraps content is often used for stuff beneath header 
   cursor: pointer;
 }
 
-.whatsio-button ~ .whatsio-button {
-  margin-right: 20px;
-}
-
 .whatsio-button:hover {
   transform: scale(1.2) rotate(5deg);
   transition: transform 100ms;
@@ -99,4 +95,13 @@ centered-content-container wraps content is often used for stuff beneath header 
 
 .whatsio-text-input {
   accent-color: var(--primary-color);
+}
+
+.whatsio-button-disabled, .whatsio-button-disabled:hover {
+  opacity: 0.8;
+  transition: none;
+  transform: none;
+  cursor:not-allowed;
+  /* disables all clicks for the case of links */
+  pointer-events: none;
 }
