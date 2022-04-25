@@ -11,6 +11,9 @@ export default function useGoogleApi() {
       .addEventListener("load", () => {
         setGoogleScriptsLoaded(true);
       });
+    if (typeof google === "object" && typeof google.maps === "object") {
+      setGoogleScriptsLoaded(true);
+    }
   }, []);
 
   useEffect(() => {
