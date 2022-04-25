@@ -5,6 +5,7 @@ type Props = {
   href?: string;
   onClick?: Function;
   children: React.ReactNode;
+  disabled?: boolean;
 };
 
 function assert(condition: any, msg?: string): asserts condition {
@@ -13,11 +14,24 @@ function assert(condition: any, msg?: string): asserts condition {
   }
 }
 
-export default function Button({ href, onClick, children }: Props) {
+export default function Button({
+  href,
+  onClick,
+  children,
+  disabled,
+  ...delegated
+}: Props) {
   if (href) {
     assert(typeof href === "string", "<Button> expected a string for `href`");
     return (
-      <Link className="whatsio-button" to={href}>
+      <Link
+        aria-disabled={disabled}
+        className={`whatsio-button ${
+          disabled ? "whatsio-button-disabled" : ""
+        }`}
+        to={href}
+        {...delegated}
+      >
         {children}
       </Link>
     );
@@ -27,7 +41,14 @@ export default function Button({ href, onClick, children }: Props) {
       "<Button> expected a function for `onclick`"
     );
     return (
-      <button className="whatsio-button" onClick={(e) => onClick(e)}>
+      <button
+        aria-disabled={disabled}
+        className={`whatsio-button ${
+          disabled ? "whatsio-button-disabled" : ""
+        }`}
+        onClick={(e) => onClick(e)}
+        {...delegated}
+      >
         {children}
       </button>
     );

@@ -11,7 +11,9 @@ export default function Index() {
       What are you looking for?
       <div className="button-container">
         <Button href="/restaurants">Restaurant</Button>
-        <Button href="/dishes">Dish</Button>
+        <Button disabled={true} href="/dishes">
+          Dish
+        </Button>
       </div>
     </div>
   );
