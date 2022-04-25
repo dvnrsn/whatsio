@@ -46,7 +46,7 @@ export default function useGoogleApi() {
       const AutoComplete = new google.maps.places.Autocomplete(input, options);
       AutoComplete.addListener("place_changed", () => {
         const place = AutoComplete.getPlace();
-        setImage(place.photos[0].getUrl());
+        if (place.photos?.length) setImage(place.photos[0].getUrl());
       });
     }
   }, [position, googleScriptsLoaded]);
