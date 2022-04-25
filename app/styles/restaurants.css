@@ -1,0 +1,13 @@
+.restaurant-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 20%;
+  object-fit: cover;
+
+}
+
+.image-placeholder {
+  width: 300px;
+  height: 300px;
+  border-radius: 20%;
+}
