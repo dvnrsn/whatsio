@@ -105,3 +105,7 @@ centered-content-container wraps content is often used for stuff beneath header 
   /* disables all clicks for the case of links */
   pointer-events: none;
 }
+
+input[type='text'] {
+  padding: 2px 4px;
+}
