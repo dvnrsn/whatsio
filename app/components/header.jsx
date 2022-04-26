@@ -8,8 +8,8 @@ export const links = () => {
 export function Header() {
   return (
     <header>
-      <Link className="logo-wrapper" to="/">
-        <img className="logo" src="whatsio.svg" alt="svg as image" />
+      <Link className="logo-wrapper" to="/" aria-label="Navigate to home">
+        <img className="logo" src="whatsio.svg" alt="whatsio logo" />
       </Link>
       <nav>
         <ul className="navUl">
