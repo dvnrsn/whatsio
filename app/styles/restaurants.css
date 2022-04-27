@@ -3,11 +3,21 @@
   height: 300px;
   border-radius: 20%;
   object-fit: cover;
-
 }
 
-.image-placeholder {
-  width: 300px;
-  height: 300px;
-  border-radius: 20%;
+.thats-it-button{
+  position: absolute;
+  right:0;
+  bottom: 100px;
+  transform: translateX(80%);
+}
+
+.image-and-button-container {
+  position: relative;
+}
+
+.centered-loader {
+  display: grid;
+  place-content: center;
+  margin-top: 40px;
 }
