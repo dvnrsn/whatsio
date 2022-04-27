@@ -109,3 +109,34 @@ centered-content-container wraps content is often used for stuff beneath header 
 input[type='text'] {
   padding: 2px 4px;
 }
+
+/* whatsio loader styles */
+
+@keyframes loader {
+  0% {
+    transform: translateX(-200%) rotate(0);
+  }
+  100% {
+    transform: translateX(200%) rotate(0.5turn);
+    background-color: var(--primary-color);
+  }
+}
+
+.whatsio-loader-container {
+  position: relative;
+}
+
+.whatsio-loader {
+  height: 25px;
+  width: 25px;
+  background: hsl(25, 67%, 70%);
+  animation: loader 400ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.whatsio-loader-second {
+  animation-delay: 200ms;
+  position: absolute;
+  top: 0;
+}
