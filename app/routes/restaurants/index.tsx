@@ -35,7 +35,12 @@ export default function () {
   return (
     <div className="centered-content-container">
       Which Restauraunt?
-      <Input id="google-auto-complete" autoFocus type="text" />
+      <Input
+        placeholder="Chipotle"
+        id="google-auto-complete"
+        autoFocus
+        type="text"
+      />
       <div className="image-and-button-container">
         {imageUrl && loadingImage && (
           <div className="centered-loader">
