@@ -43,7 +43,7 @@ export default function Button({
     return (
       <button
         aria-disabled={disabled}
-        className={`whatsio-button test ${
+        className={`whatsio-button ${
           disabled ? "whatsio-button-disabled" : ""
         }`}
         onClick={(e) => onClick(e)}
